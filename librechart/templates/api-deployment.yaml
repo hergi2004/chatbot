@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.31.2 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: api
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: api
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.network/librechat-default: "true"
+        io.kompose.service: api
+    spec:
+      containers:
+        - image: hergi2004/librechat:latest
+          name: librechat
+          ports:
+            - containerPort: 3080
+              hostPort: 3080
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /app/.env
+              subPath: .env
+              name: env-volume
+      restartPolicy: Always
+      volumes:
+      - name: env-volume
+        configMap:
+          name: librechat-env
+status: {}

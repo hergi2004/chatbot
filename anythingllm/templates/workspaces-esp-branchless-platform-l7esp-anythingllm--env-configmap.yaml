@@ -1,0 +1,40 @@
+apiVersion: v1
+data:
+  .env: |
+    # ANTHROPIC_API_KEY: sk-ant-xxxx
+    # ANTHROPIC_MODEL_PREF: claude-2
+    # AUTH_TOKEN: hunter2
+    AZURE_OPENAI_ENDPOINT: ""
+    AZURE_OPENAI_KEY: ""
+    # CACHE_VECTORS: "true"
+    # CHROMA_API_HEADER: X-Api-Key
+    # CHROMA_API_KEY: sk-123abc
+    # CHROMA_ENDPOINT: http://host.docker.internal:8000
+    # EMBEDDING_BASE_PATH: https://localhost:8080/v1
+    EMBEDDING_ENGINE: azure
+    EMBEDDING_MODEL_PREF: text-embedding-ada-002
+    # GID: "1000"
+    # JWT_SECRET: my-random-string-for-seeding
+    LLM_PROVIDER: azure
+    # LMSTUDIO_BASE_PATH: http://your-server:1234/v1
+    # LMSTUDIO_MODEL_TOKEN_LIMIT: "4096"
+    # LOCAL_AI_BASE_PATH: http://host.docker.internal:8080/v1
+    # LOCAL_AI_MODEL_PREF: luna-ai-llama2
+    # LOCAL_AI_MODEL_TOKEN_LIMIT: "4096"
+    NO_DEBUG: "false"
+    # OPEN_AI_KEY: ""
+    OPEN_MODEL_PREF: gpt-35-turbo
+    # PINECONE_API_KEY: ""
+    # PINECONE_ENVIRONMENT: ""
+    # PINECONE_INDEX: ""
+    # QDRANT_API_KEY: ""
+    # QDRANT_ENDPOINT: http://localhost:6333
+    # SERVER_PORT: "3001"
+    STORAGE_DIR: /app/server/storage
+    # UID: "1000"
+    VECTOR_DB: lancedb
+    # WEAVIATE_API_KEY: ""
+    # WEAVIATE_ENDPOINT: http://localhost:8080
+kind: ConfigMap
+metadata:
+  name: anythingllm-env
