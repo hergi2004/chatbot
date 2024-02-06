@@ -12,7 +12,7 @@ CREATE_WORKSPACE_URL="http://50.19.164.46:3001/api/v1/workspace/new"
 UPLOAD_DOCUMENT_URL="http://50.19.164.46:3001/api/v1/workspace/$WORKSPACE_NAME/update-embeddings"
 
 # API key
-API_KEY="your_api_key_here"
+API_KEY="629MMJT-S334FZ2-HPE8V5S-PGQAWWQ"
 
 # API request body for creating a new workspace
 WORKSPACE_BODY=$(cat <<EOF
@@ -44,9 +44,10 @@ for FILE_PATH in reports/*; do
     echo "Uploading document: $FILE_NAME"
     UPLOAD_BODY=$(cat <<EOF
     {
-      "adds": [],
-      "deletes": [
+      "adds": [
         "$FILE_NAME"
+      ],
+      "deletes": [
       ]
     }
 EOF
