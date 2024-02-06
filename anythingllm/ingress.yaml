@@ -11,7 +11,7 @@ metadata:
   namespace: anythingllm
 spec:
   rules:
-  - host: askl7.test.l7informatics.com
+  - host: url.com
     http:
       paths:
       - backend:
@@ -23,6 +23,6 @@ spec:
         pathType: Prefix
   tls:
   - hosts:
-    - askl7.test.l7informatics.com
-    secretName: askl7-l7informatics-com
+    - url.com
+    secretName: url.com
 
